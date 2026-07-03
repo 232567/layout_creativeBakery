@@ -1,7 +1,29 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@import './fonts';
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './blocks/header';
+@import './blocks/hero';
+@import './blocks/products';
+@import './blocks/about';
+@import './blocks/footer';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  color: #1c1a26;
+  background: #eef7ff;
+}
+
+.header,
+.hero,
+.products,
+.about,
+.footer {
+  max-width: 1440px;
+  margin: 0 auto;
 }
