@@ -3,8 +3,12 @@
 }
 
 .hero__text {
-  width: 300px;
-  margin: 0 0 24px;
+  width: 280px;
+  margin: 40px 0 0;
+  margin-bottom: 0;
+
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .hero__content {
@@ -14,7 +18,8 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 320px;
+  min-height: 350px;
+  margin-top: 8px;
 }
 
 .hero__title {
@@ -23,11 +28,13 @@
 
   margin: 0;
 
-  font-size: 84px;
+  font-size: 144px;
   font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
+  line-height: 0.85;
   letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .hero__image {
@@ -35,69 +42,94 @@
   z-index: 1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
-  width: 340px;
+  width: 500px;
+  height: auto;
+
+  transform: translate(-50%, -50%);
 }
 
 .hero__button {
   display: inline-flex;
-  gap: 8px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
   width: 220px;
   height: 56px;
-  margin-top: 40px;
-  border: 2px solid #f9512e;
-  border-radius: 32px;
+  margin-top: 8px;
 
-  font-weight: 700;
   color: #f9512e;
+  font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
 
-  transition: all 0.3s;
+  border: 2px solid #f9512e;
+  border-radius: 32px;
 
-  &:hover {
-    color: #fff;
-    background: #f9512e;
-  }
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 }
 
-@media (max-width: 1279px) {
+.hero__button:hover {
+  color: #fff;
+  background-color: #f9512e;
+}
+
+.hero__button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tablet */
+@include on-tablet {
   .hero {
-    padding: 48px 72px;
+    padding: 48px 72px 100px;
+  }
+
+  .hero__content {
+    min-height: 330px;
   }
 
   .hero__title {
-    font-size: 64px;
+    font-size: 96px;
+  }
+
+  .hero__image {
+    width: 400px;
+  }
+}
+
+/* Mobile */
+@include on-mobile {
+  .hero {
+    padding: 32px 16px 72px;
+  }
+
+  .hero__text {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero__content {
+    min-height: 270px;
+    margin-top: 24px;
+  }
+
+  .hero__title {
+    font-size: 48px;
+    line-height: 0.9;
+    white-space: nowrap;
   }
 
   .hero__image {
     width: 260px;
-  }
-}
-
-@media (max-width: 639px) {
-  .hero {
-    padding: 32px 16px;
-  }
-
-  .hero__content {
-    min-height: 220px;
-  }
-
-  .hero__title {
-    font-size: 42px;
-    text-align: center;
-  }
-
-  .hero__image {
-    width: 180px;
+    max-width: 80vw;
   }
 
   .hero__button {
     width: 100%;
+    margin-top: -20px;
   }
 }
